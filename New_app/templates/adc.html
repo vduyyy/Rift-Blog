@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADC</title>
+    {% load static %}
+    <link rel="stylesheet" href ="{% static 'stylesheet.css' %}">
+</head>
+<body>
+    <div class = "top_wrapper">
+    <div class ="top_icon">
+        <img src = "{% static '/RiotX_champion/adc_icon.jpg'%}"></a>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </div>  
+
+    <div class ="top_bar">
+        <a href = "/top"> <h4> Top</h4></a>
+        <a href = "/mid"> <h4>Middle </h4></a>
+        <a href = "/jungle"> <h4> Jungle</h4></a>
+        <a href = "/support"> <h4> Support</h4></a>
+        <a href = "/builder"> <h4> Build A Blog</h4></a>
+        <a href ="/go_back"><h4>Go Back</h4></a>
+        <a href ="/log_out"><h4>Log Out</h4></a>
+    </div>
+    <div class ="top_box">
+        <p>ADC sesion meta: </p>
+         <img src = "{% static '/RiotX_champion/xayah.jpg' %}">
+         <img src = "{% static '/RiotX_champion/vayne.jpg' %}">
+         <img src = "{% static '/RiotX_champion/draven.jpg' %}">
+         <img src = "{% static '/RiotX_champion/lucian.jpg' %}">
+         <img src = "{% static '/RiotX_champion/caitlyn.jpg' %}">
+         <img src = "{% static '/RiotX_champion/_kaisa.jpg' %}">
+    </div>
+    <div class = "build_box">
+        <h2>Popular Build: </h2>
+        <a href = "">Popular</a> | <a href = "" >Recent</a> 
+        <div class = "bottle">
+            <table class =" table"> 
+                <thead>
+                        <th scope= "col">Title:</th>
+                        <th scope= "col">Champion:</th>
+                        <th scope= "col">Role:</th>
+                </thead>
+                <tbody>
+                    {% for path in paths %}
+                    <tr>
+                        <td>{{path.title}}</td>
+                        <td>{{path.champion}}</td>
+                        <td>{{path.lane}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class ="music">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yCcaeFlyiyM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class ="comment_box">
+            <form action = "/comment" method ="POST"> 
+                {% csrf_token %}
+                <h3> Comment:</h3>
+                <a href =""> All</a> | <a href = ""> Popular</a> | <a href = ""> Recent</a>
+                <div class="row_comment">
+                  <div class="col-sm-12" style = " margin-top:1em;">
+                    <input type="text" class="form-control" placeholder="User_name">
+                  </div>
+                  <div class = "col-lg-12">
+                      <textarea class ="form-control" name = "comment" row="10" placeholder="Write A Comment" style = "margin-top: 2em;"></textarea>
+                    <button type="submit" class="btn btn-secondary" style ="margin-top:1em;">Post Comment</button>
+                  </div>
+                 
+                </div>
+            </form>
+            <div class= "my_box">
+            {% for message in messages reversed %}
+                <div class="col-md-9 col-sm-9">
+                    <div class="panel panel-default arrow left">
+                        <div class="panel-body">
+                        <header class="text-left">
+                            <div class="comment-user"><i class="fa fa-user"></i> {{user.user_name}}</div>
+                        <time class="comment-date"><i class="fa fa-clock-o"></i> {{user.created_at}}</time>
+                        </header>
+                            <div class="comment-post">
+            <p>{{message.message}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front Page </title>
+    {% load static %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href ="{% static 'style.css' %}">
+
+</head>
+<body>
+    <div class = "Bee">
+        <div class ="icon">
+            <h2>Welcome to the Rift</h2>
+        </div>
+        <div class ="barline">
+            <div class= "role">
+                <a href ="top"><h4>Top</h4></a>
+                <a href ="mid"><h4>Middle</h4></a>
+                <a href ="jungle"><h4>Jungle</h4></a>
+                <a href ="adc"><h4>ADC</h4></a>
+                <a href ="support"><h4>Support</h4></a>
+                <a href ="builder"><h4>Build A Path</h4></a>
+            </div>
+        </div>
+        <div class ="character_box">
+                <a href = ""> <img src = "{% static '/RiotX_champion/aatrox.jpg' %}"></a>
+                <a href = ""> <img src = "{% static '/RiotX_champion/ahri.jpg' %}"></a>
+                <a href = ""> <img src = "{% static '/RiotX_champion/alistar.jpg' %}"></a>
+                <a href = ""> <img src = "{% static '/RiotX_champion/teemo.jpg' %}"></a>
+                <a href = ""> <img src = "{% static '/RiotX_champion/Aphelios.jpg' %}"></a>
+                <a href = ""> <img src = "{% static '/RiotX_champion/darius.jpg' %}"></a>
+        </div>
+        <div class ="form_box">
+            <p>League of Legends is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows and macOS. Inspired by the Warcraft III: The Frozen Throne mod Defense of the Ancients, the game follows a freemium model and is supported by microtransactions.</p>
+            <img src ="{% static '/RiotX_champion/logo.gif' %}">
+        </div>
+        <div class ="music">
+            <iframe width="450" height= "300" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class ="top_music">
+            <iframe src="https://giphy.com/embed/26gYOdBrT3MKcTj3O" width="350" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/leagueoflegends-wolf-league-of-legends-26gYOdBrT3MKcTj3O">via GIPHY</a></p>
+        </div>
+
+        <div class =" search_box">
+            <form action ="" method ="">
+                <ul class="nav nav-tabs">
+                    <li><input type ="text" name ="search" placeholder="Keyword" style="height:3em;width: 25em;"></li>
+                    <li><a href="#">Top</a></li>
+                    <li><a href="#">Mid</a></li>
+                    <li><a href="#">Jungle</a></li>
+                    <li><a href="#">ADC</a></li>
+                    <li><a href="#">Support</a></li>
+                  </ul>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
